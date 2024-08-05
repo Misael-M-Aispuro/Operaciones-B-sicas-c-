@@ -1,0 +1,37 @@
+// Actividad #2 - Operaciones Básicas en c++
+#include <clocale> //Librería general para reconocer caracteres especiales
+#include <iostream> //Librería para funciones de entrada y salida
+#include <cstdlib> //Librería necesaria para usar system("pause")
+int main() //cuerpo del programa
+{
+    std::setlocale(LC_ALL, "es_ES.UTF-8"); /* Establecemos una configuración regional
+                                para soportar las tildes del idioma español acorde a UTF-8.*/
+    float a, b, resultado; /*Declaramos las 2 variables de entrada y la variable resultado como tipo float
+                             Esto para poder hacer operaciones tanto enteras como decimales*/
+    std::cout << "Introduce el valor del primer número: "; //Solicitamos por pantalla a usuario el primer número 
+    std::cin >> a; //Recibimos por teclado la variable que ingresa el usuario y la colocamos en la variable "a"
+    std::cout << "Introduce el valor del segundo número: "; //Solicitamos por pantalla a usuario el segundo número                               
+    std::cin >> b; //Recibimos por teclado la variable que ingresa el usuario y la colocamos en la variable "b"
+    resultado = a + b; //Asignamos a la variable "resultado" la suma de ambas variables ingresadas por usuario
+    std::cout << "\nLa suma es: " << resultado << std::endl; //Con \n agregamos un salto de línea antes de mostrar el dato
+    //Mostramos por pantalla el resultado de la suma de ambas variables
+    //Usamos "endl" para hacer un salto de línea (con ello evitamos que la próxima impresión por pantalla se una en la misma línea)
+    resultado = a - b; //Cambiamos la variable resultado a la resta de "a" menos "b"
+    std::cout << "La resta es: " << resultado << std::endl; //Mostramos el resultado que ahora contiene la resta de "a" menos "b"
+                                     //Con endl nuevamente hacemos salto de línea
+    resultado = a * b; //Cambiamos el valor de resultado a la multiplicación de "a" por "b"
+    std::cout << "La multiplicación es: " << resultado << std::endl; //Mostramos el resultado de la multiplicación de las variables
+                                                         //Con endl nuevamente hacemos salto de línea
+    if (b != 0) { // Verificamos que "b" no sea igual a cero para evitar la división por cero porque arrojaría infinito
+        resultado = a / b; // Si se cumple asignamos a resultado la operación de la división de "a" entre "b"
+    std::cout << "La división es: " << resultado << std::endl; //Mostramos el resultado que ahora contiene la división de las variables
+    std::cout << "\n"; //Agregamos dos saltos de línea (endln, \n) para separar los resultados del diálogo de pausa                                 
+    }                                        
+    else { //En caso de que usuario ingrese como segundo número un cero...
+    std::cout << "La división no es posible porque el segundo número es 0." << std::endl;//Mostramos por pantalla que no es posible
+    std::cout << "\n"; //Agregamos dos saltos de línea (endln, \n) para separar los resultados del diálogo de pausa
+    }                                                                     
+    system("pause"); //Pausamos la consola en los resultados y quedamos a la espera de presionar cualquier tecla para salir
+    return 0; //El programa se ejecuta correctamente
+
+}  //PERIODO 2 ______________LENGUAJES DE PROGRAMACIÓN 1 _____________MISAEL MEDINA AISPURO
